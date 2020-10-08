@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "Node_Template",
+      "script": "./src/Index.ts",
+      "autorestart": true,
+      "watch": false,
+      "max_memory_restart": "1G"
+    }
+  ]
+}
