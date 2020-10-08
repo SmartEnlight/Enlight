@@ -1,0 +1,12 @@
+{
+    "type": "string",
+    "required": [
+      "Authorization"
+    ],
+    "properties": {
+      "Authorization": {
+        "type": "string"
+      }
+    },
+    "example": "Bearer asdf.qwer.zxcv"
+}

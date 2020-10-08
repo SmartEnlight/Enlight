@@ -1,0 +1,24 @@
+{
+	"type": "object",
+	"required": ["data"],
+	"properties": {
+		"data": {
+			"type": "array"
+		}
+	},
+	"example": {
+		"status": 200,
+		"message": "유저 정보를 성공적으로 가져왔습니다",
+		"data": {
+			"_id": "sdfjsfkjsklfjsdklf",
+			"email": "onnu0802@naver.com",
+			"username": "염태민",
+			"lastLoginTime": "2020-10-08 15:32:13",
+			"createdTime": "2020-10-08 15:32:13",
+			"loginCount": 2,
+			"deviceId": "deviceId",
+			"notification": true
+		},
+		"success": true
+	}
+}

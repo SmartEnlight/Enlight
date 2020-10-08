@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "array"
+    }
+  },
+  "example": {
+    "status": 200,
+    "message": "게시물을 성공적으로 업로드 하였습니다.",
+    "data": {
+      "day": "10:02:01",
+      "week": "09:01:03",
+      "month": "08:02:01"
+    },
+    "success": true
+  }
+}

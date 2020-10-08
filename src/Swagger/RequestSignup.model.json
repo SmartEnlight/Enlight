@@ -1,0 +1,24 @@
+{
+	"type": "object",
+	"required": ["email", "password", "username", "deviceId"],
+	"properties": {
+		"email": {
+			"type": "string"
+		},
+		"password": {
+			"type": "string"
+		},
+		"username": {
+			"type": "string"
+		},
+		"deviceId": {
+			"type": "string"
+		}
+	},
+	"example": {
+		"email": "email",
+		"password": "password",
+		"username": "username",
+		"deviceId": "deviceId"
+	}
+}

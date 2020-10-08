@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"required": ["data"],
+	"properties": {
+		"data": {
+			"type": "array"
+		}
+	},
+	"example": {
+		"status": 200,
+		"message": "회원가입을 성공 하였습니다.",
+		"success": true
+	}
+}

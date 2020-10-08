@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "array"
+    }
+  },
+  "example": {
+    "status": 200,
+    "message": "엑세스 토큰을 성공적으로 가져왔습니다",
+    "accessToken": "string",
+    "success": true
+  }
+}

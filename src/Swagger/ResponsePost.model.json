@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "array"
+    }
+  },
+  "example": {
+    "status": 200,
+    "message": "게시물을 성공적으로 업로드 하였습니다.",
+    "success": true
+  }
+}

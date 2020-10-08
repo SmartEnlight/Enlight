@@ -1,0 +1,13 @@
+{
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array"
+		}
+	},
+	"example": {
+		"status": 200,
+		"message": "성공적으로 업데이트 했습니다",
+		"success": true
+	}
+}
