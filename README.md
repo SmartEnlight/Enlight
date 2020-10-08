@@ -1,9 +1,17 @@
-# Enlight
+# Enlight-Backend
 
-2020 선린인터넷고등학교 IOT 경진대회 서버
-
-명세서:
-
-ERD:
+명세서: https://unitaemin.run.goorm.io/enlight/docs/
 
 ENV:
+
+```
+PORT=
+
+NODE_ENV=
+NODE_MORGAN=
+
+USER_SECRET_KEY=
+JWT_SECRET_KEY=
+
+DB_HOST=mongodb://localhost:27017/grouping
+```
