@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"required": ["data"],
+	"properties": {
+		"data": {
+			"type": "array"
+		}
+	},
+	"example": {
+		"status": 200,
+		"message": "디바이스를 성공적으로 추가 하였습니다.",
+		"success": true
+	}
+}

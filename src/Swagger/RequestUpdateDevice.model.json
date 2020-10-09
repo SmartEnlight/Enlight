@@ -1,0 +1,20 @@
+{
+	"type": "object",
+	"required": ["data", "key"],
+	"properties": {
+		"key": {
+			"type": "string"
+		},
+		"data": {
+			"type": "string"
+		},
+		"db": {
+			"type": "number"
+		}
+	},
+	"example": {
+		"key": "asdf",
+		"data": "2020-10-03 11:11:32",
+		"db": 30
+	}
+}
