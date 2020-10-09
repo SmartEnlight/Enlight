@@ -2,12 +2,12 @@ import { Router } from "express";
 const router = Router();
 
 import Auth from "./auth/auth.router";
-import Post from "./post/post.router";
+import Device from "./device/device.router";
 router.get("/", (req, res, next) => {
 	try {
 		return res.send({
-			title: "Grouping",
-			contest: "선린인터넷고등학교 스문 수행평가",
+			title: "Device",
+			contest: "선린인터넷고등학교 IOT 경진대회",
 			version: "0.0.1",
 		});
 	} catch (e) {
@@ -15,5 +15,5 @@ router.get("/", (req, res, next) => {
 	}
 });
 router.use("/auth", Auth);
-router.use("/sleep", Post);
+router.use("/device", Device);
 export default router;
