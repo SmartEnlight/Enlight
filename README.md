@@ -13,5 +13,5 @@ NODE_MORGAN=
 USER_SECRET_KEY=
 JWT_SECRET_KEY=
 
-DB_HOST=mongodb://localhost:27017/grouping
+DB_HOST=mongodb://localhost:27017/enlight
 ```
