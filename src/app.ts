@@ -6,8 +6,10 @@ import * as cors from "cors";
 import * as http from "http";
 import passport from "./lib/passport";
 import { swaggerSpec } from "./lib/swagger";
-const swaggerUi = require("swagger-ui-express");
 
+const swaggerUi = require("swagger-ui-express");
+export const admin = require("firebase-admin");
+const serviceAccount = require("./Config/serviceAccount.json");
 import Router from "./Router";
 class App {
 	public app: express.Application;
@@ -28,6 +30,9 @@ class App {
 		this.app.use(cors());
 		this.app.use(express.static("public"));
 		this.app.use(passport.Init());
+		admin.initializeApp({
+			credential: admin.credential.cert(serviceAccount),
+		});
 	}
 	private routerInit() {
 		this.app.use(Router);
