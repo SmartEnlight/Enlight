@@ -10,6 +10,16 @@
 		"status": 200,
 		"message": "로그인에 성공했습니다",
 		"accessToken": "accessToken",
-		"success": true
+		"success": true,
+		"userInfo": {
+			"_id": "sdfjsfkjsklfjsdklf",
+			"email": "onnu0802@naver.com",
+			"username": "염태민",
+			"lastLoginTime": "2020-10-08 15:32:13",
+			"createdTime": "2020-10-08 15:32:13",
+			"loginCount": 2,
+			"deviceId": "deviceId",
+			"notification": true
+		}
 	}
 }

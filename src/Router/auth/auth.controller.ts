@@ -43,6 +43,7 @@ class AuthController extends Controller {
 			if (SignInResult.success) {
 				return super.Response(res, true, 200, SignInResult.message, {
 					accessToken: SignInResult.token,
+					userInfo: SignInResult.userInfo,
 				});
 			} else {
 				return super.Response(res, false, 400, SignInResult.message);

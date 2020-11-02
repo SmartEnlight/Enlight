@@ -67,6 +67,7 @@ export interface ResultSignIn {
 	message: string;
 	success: boolean;
 	token?: string;
+	userInfo?: object;
 }
 export interface UserDocument extends Document, IUser {
 	//methods 등록
@@ -129,6 +130,16 @@ userSchema.statics.signIn = async function (data: UserSignIn): Promise<ResultSig
 								message: "로그인에 성공했습니다",
 								success: true,
 								token: TokenCreateResult.token,
+								userInfo: {
+									_id: result._id,
+									email: result.email,
+									useranme: result.username,
+									lastLoginTime: result.lastLoginTime,
+									createdTime: result.createdTime,
+									loginCount: result.loginCount,
+									deviceId: result.deviceId,
+									notification: result.notification,
+								},
 							});
 						} else {
 							return resolve({ message: "비밀번호가 일치하지않습니다", success: false });
