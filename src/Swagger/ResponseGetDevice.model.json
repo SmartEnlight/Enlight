@@ -10,9 +10,9 @@
 		"status": 200,
 		"message": "해당 날짜의 층간소음 발생 건수를 성공적으로 가져왔습니다.",
 		"data": {
-			"day": "10:02:01",
-			"week": "09:01:03",
-			"month": "08:02:01"
+			"morning": 0,
+			"night": 0,
+			"total": 0
 		},
 		"success": true
 	}

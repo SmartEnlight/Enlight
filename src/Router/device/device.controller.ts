@@ -88,7 +88,7 @@ class DeviceController extends Controller {
 			let result = await Device.get({ _id: decoded._id, data: data });
 
 			if (result.success) {
-				return super.Response(res, true, 200, "해당 날짜의 층간소음 발생 건수를 성공적으로 가져왔습니다.", { list: result.data });
+				return super.Response(res, true, 200, "해당 날짜의 층간소음 발생 건수를 성공적으로 가져왔습니다.", { data: result.data });
 			} else {
 				return super.Response(res, false, 400, result.message);
 			}
