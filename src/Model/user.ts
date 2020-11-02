@@ -133,7 +133,7 @@ userSchema.statics.signIn = async function (data: UserSignIn): Promise<ResultSig
 								userInfo: {
 									_id: result._id,
 									email: result.email,
-									useranme: result.username,
+									username: result.username,
 									lastLoginTime: result.lastLoginTime,
 									createdTime: result.createdTime,
 									loginCount: result.loginCount,
