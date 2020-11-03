@@ -80,7 +80,7 @@ export interface IUserDocument extends Model<UserDocument> {
 	signIn(): Promise<ResultSignIn>;
 }
 
-userSchema.statics.create = async function (data: UserCreate): Promise<Result> {
+userSchema.statics.create = async function (data: UserCreate): Promise<any> {
 	return new Promise(async function (resolve, reject) {
 		try {
 			if (await User.findOne({ email: data.email })) {
@@ -103,6 +103,7 @@ userSchema.statics.create = async function (data: UserCreate): Promise<Result> {
 					return resolve({
 						success: true,
 						message: "회원가입을 성공 하였습니다.",
+						_id: data._id,
 					});
 				});
 			});
