@@ -129,8 +129,8 @@ class DeviceController extends Controller {
 				//FCM코드
 				let fcm_message = {
 					notification: {
-						title: "Enlight",
-						body: "test",
+						title: "층간소음 감지됨",
+						body: `Enlight에서 소음이 감지되었습니다. 층간소음에 유의해 주세요! (${result.db})`,
 					},
 					data: {
 						fileno: "44",

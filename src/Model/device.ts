@@ -122,7 +122,7 @@ deviceSchema.statics.get = async function (data: DeviceGet): Promise<Result> {
 		}
 	});
 };
-deviceSchema.statics.update = async function (data: DeviceUpdate): Promise<Result> {
+deviceSchema.statics.update = async function (data: DeviceUpdate): Promise<any> {
 	return new Promise(async function (resolve, reject) {
 		try {
 			User.findOne({ _id: data.key }, function (err, userResult) {
@@ -135,6 +135,7 @@ deviceSchema.statics.update = async function (data: DeviceUpdate): Promise<Resul
 								success: true,
 								message: "업데이트를 성공하였습니다.",
 								data: userResult.deviceId,
+								db: data.db,
 							});
 						});
 					} else {
