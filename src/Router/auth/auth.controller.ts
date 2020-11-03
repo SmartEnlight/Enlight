@@ -4,6 +4,7 @@ import * as jwt from "jsonwebtoken";
 import Controller from "../../lib/controller";
 import RegExp from "../../lib/regExp";
 import User from "../../Model/user";
+import Device from "../../Model/device";
 
 class AuthController extends Controller {
 	constructor() {
@@ -89,6 +90,12 @@ class AuthController extends Controller {
 				deviceId: deviceId,
 			});
 			if (SignUpResult.success) {
+				console.log("요청", SignUpResult._id);
+				let DeviceCreateResult = await Device.create({
+					_id: SignUpResult._id,
+					key: email,
+					name: "Device",
+				});
 				return super.Response(res, true, 200, SignUpResult.message);
 			} else {
 				return super.Response(res, false, 400, SignUpResult.message);
