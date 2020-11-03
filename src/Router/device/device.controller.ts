@@ -119,7 +119,7 @@ class DeviceController extends Controller {
 	public async Update(req: Request, res: Response, next: NextFunction) {
 		try {
 			const { key, data, db } = req.body;
-			let decoded: any = jwt.verify(key, process.env.JWT_SECRET_KEY);
+			let decoded: any = jwt.verify(key.split("Bearer ")[1], process.env.JWT_SECRET_KEY);
 
 			if (super.CheckBlank(data)) {
 				return super.Response(res, false, 400, "빈칸을 모두 입력해 주세요.");
