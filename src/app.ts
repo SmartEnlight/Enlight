@@ -42,8 +42,8 @@ class App {
 		});
 		var options = {
 			swaggerOptions: {
-				url: [`http://localhost:4051/swagger.json`],
-				// url: [`https://unitaemin.run.goorm.io/grouping/swagger.json`],
+				// url: [`http://localhost:4051/swagger.json`],
+				url: [`https://unitaemin.run.goorm.io/enlight/swagger.json`],
 			},
 		};
 		this.app.use("/docs", swaggerUi.serve, swaggerUi.setup(null, options));
