@@ -125,20 +125,22 @@ deviceSchema.statics.get = async function (data: DeviceGet): Promise<Result> {
 deviceSchema.statics.update = async function (data: DeviceUpdate): Promise<Result> {
 	return new Promise(async function (resolve, reject) {
 		try {
-			Device.findOne({ key: data.key }, function (err, result) {
-				if (err) throw err;
-				if (result != null) {
-					result.data.push({ data: data.data, db: data.db });
-					result.save().then((data) => {
-						return resolve({
-							success: true,
-							message: "업데이트를 성공하였습니다.",
-							data: result.deviceId,
+			User.findOne({ _id: data.key }, function (err, userResult) {
+				Device.findOne({ key: userResult.email }, function (err, result) {
+					if (err) throw err;
+					if (result != null) {
+						result.data.push({ data: data.data, db: data.db });
+						result.save().then((data) => {
+							return resolve({
+								success: true,
+								message: "업데이트를 성공하였습니다.",
+								data: userResult.deviceId,
+							});
 						});
-					});
-				} else {
-					return resolve({ message: "해당 키를 가지고 있는 디바이스는 없습니다.", success: false });
-				}
+					} else {
+						return resolve({ message: "해당 키를 가지고 있는 디바이스는 없습니다.", success: false });
+					}
+				});
 			});
 		} catch (err) {
 			return reject({ success: false, message: "DB 오류." });
