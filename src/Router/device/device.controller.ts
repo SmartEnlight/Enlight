@@ -119,16 +119,18 @@ class DeviceController extends Controller {
 	public async Update(req: Request, res: Response, next: NextFunction) {
 		try {
 			const { key, data, db } = req.body;
+			let decoded: any = jwt.verify(key, process.env.JWT_SECRET_KEY);
+
 			if (super.CheckBlank(data)) {
 				return super.Response(res, false, 400, "빈칸을 모두 입력해 주세요.");
 			}
-			let result = await Device.update({ key: key, data: data, db: db });
+			let result = await Device.update({ key: decoded._id, data: data, db: db });
 			if (result.success) {
 				//FCM코드
 				let fcm_message = {
 					notification: {
 						title: "Enlight",
-						body: "HI",
+						body: "test",
 					},
 					data: {
 						fileno: "44",
@@ -136,11 +138,12 @@ class DeviceController extends Controller {
 					},
 					token: result.data,
 				};
+				console.log(fcm_message);
 				admin
 					.messaging()
 					.send(fcm_message)
 					.then((e) => {
-						return super.Response(res, true, 200, "FCM을 성공적으로 보냈습니다.");
+						return super.Response(res, true, 200, "디바이스를 성공적으로 업데이트 하였습니다.");
 					})
 					.catch((e) => {
 						return super.Response(res, false, 400, "데이터는 저장했지만 FCM을 보내지 못했습니다.");

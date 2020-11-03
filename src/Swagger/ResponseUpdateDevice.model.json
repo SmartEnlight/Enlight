@@ -8,7 +8,7 @@
 	},
 	"example": {
 		"status": 200,
-		"message": "회원가입을 성공 하였습니다.",
+		"message": "디바이스를 성공적으로 업데이트 하였습니다.",
 		"success": true
 	}
 }
