@@ -38,11 +38,11 @@ export interface DeviceCreate {
 }
 export interface DeviceGet {
 	_id: string;
-	data: object;
+	date: object;
 }
 export interface DeviceUpdate {
 	key: string;
-	data: string;
+	date: string;
 	db: number;
 }
 export interface DeviceDocument extends Document, IDevice {}
@@ -97,7 +97,7 @@ deviceSchema.statics.get = async function (data: DeviceGet): Promise<Result> {
 					};
 					for (const value of result) {
 						for (const element of value.data) {
-							let nowData = moment(data.data);
+							let nowData = moment(data.date);
 							let elementData = moment(element.data);
 							//6 hour = 21600000ms
 							//22 hour = 79200000ms
@@ -129,7 +129,7 @@ deviceSchema.statics.update = async function (data: DeviceUpdate): Promise<any> 
 				Device.findOne({ key: userResult.email }, function (err, result) {
 					if (err) throw err;
 					if (result != null) {
-						result.data.push({ data: data.data, db: data.db });
+						result.data.push({ data: data.date, db: data.db });
 						result.save().then((data) => {
 							return resolve({
 								success: true,

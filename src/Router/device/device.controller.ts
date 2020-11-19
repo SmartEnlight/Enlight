@@ -118,13 +118,13 @@ class DeviceController extends Controller {
 	 */
 	public async Update(req: Request, res: Response, next: NextFunction) {
 		try {
-			const { key, data, db } = req.body;
+			const { key, date, db } = req.body;
 			let decoded: any = jwt.verify(key.split("Bearer ")[1], process.env.JWT_SECRET_KEY);
 
-			if (super.CheckBlank(data)) {
+			if (super.CheckBlank(date)) {
 				return super.Response(res, false, 400, "빈칸을 모두 입력해 주세요.");
 			}
-			let result = await Device.update({ key: decoded._id, data: data, db: db });
+			let result = await Device.update({ key: decoded._id, date: date, db: db });
 			if (result.success) {
 				//FCM코드
 				let fcm_message = {

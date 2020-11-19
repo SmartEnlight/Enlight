@@ -5,7 +5,7 @@
 		"key": {
 			"type": "string"
 		},
-		"data": {
+		"date": {
 			"type": "string"
 		},
 		"db": {
@@ -14,7 +14,7 @@
 	},
 	"example": {
 		"key": "asdf",
-		"data": "2020-10-03 11:11:32",
+		"date": "2020-10-03 11:11:32",
 		"db": 30
 	}
 }
