@@ -80,12 +80,12 @@ class DeviceController extends Controller {
 	 */
 	public async Get(req: Request, res: Response, next: NextFunction) {
 		try {
-			const { data } = req.body;
-			if (super.CheckBlank(data)) {
+			const { date } = req.body;
+			if (super.CheckBlank(date)) {
 				return super.Response(res, false, 400, "빈칸을 모두 입력해 주세요.");
 			}
 			let decoded: any = jwt.verify(req.headers["authorization"].split("Bearer ")[1], process.env.JWT_SECRET_KEY);
-			let result = await Device.get({ _id: decoded._id, data: data });
+			let result = await Device.get({ _id: decoded._id, date: date });
 
 			if (result.success) {
 				return super.Response(res, true, 200, "해당 날짜의 층간소음 발생 건수를 성공적으로 가져왔습니다.", { data: result.data });
@@ -130,7 +130,7 @@ class DeviceController extends Controller {
 				let fcm_message = {
 					notification: {
 						title: "층간소음 감지됨",
-						body: `Enlight에서 소음이 감지되었습니다. 층간소음에 유의해 주세요! (${db})`,
+						body: `Enlight에서 소음이 감지되었습니다. 층간소음에 유의해 주세요! (${db} db)`,
 					},
 					data: {
 						fileno: "44",

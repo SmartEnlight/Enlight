@@ -1,12 +1,12 @@
 {
 	"type": "object",
-	"required": ["data"],
+	"required": ["date"],
 	"properties": {
-		"data": {
+		"date": {
 			"type": "string"
 		}
 	},
 	"example": {
-		"data": "2020-10-02"
+		"date": "2020-10-02"
 	}
 }
